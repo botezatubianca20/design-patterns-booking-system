@@ -1,13 +1,10 @@
 package main;
 
-import java.util.Date;
-
 import abstractFactory.Eveniment;
 import abstractFactory.Hackathon;
 import builder.Utilizator;
 import iterator.Iterator;
 import iterator.ListaEvenimente;
-import iterator.MeniuEvenimente;
 import singleton.DatabaseConnection;
 
 public class main {
