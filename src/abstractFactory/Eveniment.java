@@ -1,19 +1,17 @@
 package abstractFactory;
 
-import java.sql.Date;
-
 public abstract class Eveniment {
 	String denumire;
 	float pretTichet;
 	String locatie;
-	Date data;
+	String data;
 	float durata;
 	
 	public Eveniment() {
 		super();
 	}
 	
-	public Eveniment(String denumire, float pretTichet, String locatie, Date data, float durata) {
+	public Eveniment(String denumire, float pretTichet, String locatie, String data, float durata) {
 		super();
 		this.denumire = denumire;
 		this.pretTichet = pretTichet;
@@ -40,10 +38,10 @@ public abstract class Eveniment {
 	public void setLocatie(String locatie) {
 		this.locatie = locatie;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public float getDurata() {

@@ -1,11 +1,19 @@
 package main;
 
+import java.util.Date;
+
+import abstractFactory.Eveniment;
+import abstractFactory.Hackathon;
 import builder.Utilizator;
+import iterator.Iterator;
+import iterator.ListaEvenimente;
+import iterator.MeniuEvenimente;
 import singleton.DatabaseConnection;
 
 public class main {
 
 	public static void main(String[] args) {
+		//singleton
 		DatabaseConnection db1 = null;
 		DatabaseConnection db2 = null;
 	
@@ -25,7 +33,7 @@ public class main {
 		else
 			System.out.println("Referintele nu sunt identice");
 		
-		
+		//builder
 		 Utilizator user1 = new Utilizator.BuilderUtilizator("Anca", "Luca", "ancaluca@gmail.com", "1234")
                  .build();
 
@@ -38,7 +46,21 @@ public class main {
                  .build();
 
 		 System.out.println(user1.toString() + "\n" + user2.toString() + "\n" + user3.toString());
-
+		 
+		 //iterator
+		 Eveniment[] evenimente = new Eveniment[3];
+		 evenimente[0] = new Hackathon("hackathon 1", 40, "Bucuresti", "20.03.2021", 24);
+		 evenimente[1] = new Hackathon("hackathon 2", 70, "Bucuresti", "21.03.2021", 48);
+		 evenimente[2] = new Hackathon("hackathon 3", 50, "Bucuresti", "26.03.2021", 24);
+		 ListaEvenimente listaEvenimente = new ListaEvenimente(evenimente);
+		 
+		 Iterator iterator = listaEvenimente.createIterator(); 
+	        System.out.println("-------LISTA EVENIMENTE------------"); 
+	        while (iterator.hasNext()) 
+	        { 
+	            Eveniment e = (Eveniment)iterator.next(); 
+	            System.out.println(e.toString()); 
+	        } 
 	}
 
 }
