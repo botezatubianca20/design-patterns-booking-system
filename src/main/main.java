@@ -5,7 +5,11 @@ import abstractFactory.HackathonAnalizaDeDate;
 import builder.Utilizator;
 import iterator.Iterator;
 import iterator.ListaEvenimente;
-import singleton.DatabaseConnection;
+import singleton.Database;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
 class Rezultat {
@@ -20,62 +24,81 @@ class Rezultat {
 	}
 
 }
+
 public class main {
-	
-	public static Rezultat meniuAutentificare() {
-		System.out.println("-------------------------------------");
-		System.out.println("AUTENTIFICARE");
-		System.out.println("Alegeti una din optiunile de mai jos:");
-		System.out.println("1 - Creare cont");
-		System.out.println("2 - Log in");
-		System.out.println("3 - Iesire");
-		
-		Scanner s = new Scanner(System.in);
-		int value = s.nextInt();
-		
-		switch(value) {
-		case 1: {
-			System.out.println("1 - Creare cont");
-			formularCreareCont();
-			break;
-		}
-		case 2: {
-			System.out.println("2 - Log in");
-			formularLogIn();
-			break;
-		}
-		case 3 :{
-			return new Rezultat(2);
-		}
-		default:{
-			System.out.println("Alegeti o valoare intre 1 - 3\n");
-			meniuAutentificare();
-			break;
-		}
-		}
-		
-		return new Rezultat(2);
-	}
-	
-	
-	public static void formularCreareCont(){
-		System.out.println("-------------------------------------");
-		System.out.println("FORMULAR CREARE CONT");
-		
-		Scanner s = new Scanner(System.in).useDelimiter("\n");
-		
-		System.out.println("Prenume: ");
-		String prenume = s.next();
-		System.out.println("Nume: ");
-		String nume = s.next();
-		System.out.println("Email: ");
-		String email = s.next();
-		System.out.println("Parola: ");
-		String parola = s.next();
-		System.out.println("Tara de provenienta (optional): ");
-		String tara = s.next();
-		System.out.println("Sex (optional): ");
-		String sex = s.next();
+
+
+    public static Rezultat meniuAutentificare() {
+        try {
+            Connection connection = null;
+            if (Database.getInstance() != null) {
+                connection = Database.getConnection();
+            }
+
+            Statement stmt = connection.createStatement();
+            String test = "SELECT * FROM Utilizator";
+            ResultSet rs = stmt.executeQuery(test);
+            while (rs.next()) {
+                System.out.println(rs.getString("nume"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("-------------------------------------");
+        System.out.println("AUTENTIFICARE");
+        System.out.println("Alegeti una din optiunile de mai jos:");
+        System.out.println("1 - Creare cont");
+        System.out.println("2 - Log in");
+        System.out.println("3 - Iesire");
+
+        Scanner s = new Scanner(System.in);
+        int value = s.nextInt();
+
+        switch (value) {
+            case 1: {
+                System.out.println("1 - Creare cont");
+                formularCreareCont();
+                break;
+            }
+            case 2: {
+                System.out.println("2 - Log in");
+                formularLogIn();
+                break;
+            }
+            case 3: {
+                return new Rezultat(2);
+            }
+            default: {
+                System.out.println("Alegeti o valoare intre 1 - 3\n");
+                meniuAutentificare();
+                break;
+            }
+        }
+
+        return new Rezultat(2);
+    }
+
+
+    public static void formularCreareCont() {
+        System.out.println("-------------------------------------");
+        System.out.println("FORMULAR CREARE CONT");
+
+        Scanner s = new Scanner(System.in).useDelimiter("\n");
+
+        System.out.println("Prenume: ");
+        String prenume = s.next();
+        System.out.println("Nume: ");
+        String nume = s.next();
+        System.out.println("Email: ");
+        String email = s.next();
+        System.out.println("Parola: ");
+        String parola = s.next();
+        System.out.println("Tara de provenienta (optional): ");
+        String tara = s.next();
+        System.out.println("Sex (optional): ");
+        String sex = s.next();
 
 		//BUILDER
 		Utilizator user1 = new Utilizator.BuilderUtilizator(prenume, nume, email, parola).setTara(tara).setSex(sex).build();
@@ -113,7 +136,7 @@ public class main {
 		
 		Scanner s = new Scanner(System.in);
 		int value = s.nextInt();
-		
+
 		switch(value) {
 		case 1: {
 			System.out.println("1 - LISTA EVENIMENTE HACKATHON:");
@@ -139,20 +162,20 @@ public class main {
 			break;
 		}
 		}
-		
+
 		return new Rezultat(2);
 	}
-	
+
 	public static void listaEvenimenteHackathon(){
-	
+
 	}
-	
+
 	public static void listEvenimenteAlgoritmica(){
-		
+
 	}
-	
+
 	public static void listaEvenimenteWorkshop(){
-		
+
 	}
 	
 	public static void main(String[] args) {
@@ -169,14 +192,14 @@ public class main {
 		while (rezultat.val < 1) {
 			try {
 
-				rezultat = meniuAutentificare();
+                rezultat = meniuAutentificare();
 
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
-		//TO BE DELETED/EDITED:
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        //TO BE DELETED/EDITED:
 //		
 //		//singleton
 //		DatabaseConnection db1 = null;
@@ -214,10 +237,8 @@ public class main {
 //	            System.out.println(e.toString()); 
 //	        } 
 //	        
-	        
-	        
-	        
-	        
-	}
+
+
+    }
 
 }
