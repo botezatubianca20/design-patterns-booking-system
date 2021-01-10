@@ -6,8 +6,8 @@ public class WorkshopTehnologie extends Workshop{
 		super();
 	}
 
-	public WorkshopTehnologie(String denumire, float pret, String locatie, String data, int durata, String publicTinta) {
-		super(denumire, pret, locatie, data, durata, publicTinta);
+	public WorkshopTehnologie(Long id, String denumire, float pret, String locatie, String data, int durata, String publicTinta) {
+		super(id, denumire, pret, locatie, data, durata, publicTinta);
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class WorkshopTehnologie extends Workshop{
 
 	@Override
 	public String toString() {
-		return "WorkshopTehnologie [publicTinta=" + getPublicTinta() + ", denumire=" + getDenumire() + ", pretTichet="
+		return "WorkshopTehnologie [numarEveniment=" + id + ", publicTinta=" + getPublicTinta() + ", denumire=" + getDenumire() + ", pretTichet="
 				+ getPretTichet() + ", locatie=" + getLocatie() + ", data=" + getData() + ", durata=" + getDurata() + "]";
 	}
 

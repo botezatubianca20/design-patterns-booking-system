@@ -7,8 +7,8 @@ public abstract class Hackathon extends Eveniment{
 		super();
 	}
 
-	public Hackathon(String denumire, float pret, String locatie, String data, int durata, String domeniu) {
-		super(denumire, pret, locatie, data, durata);
+	public Hackathon(Long id, String denumire, float pret, String locatie, String data, int durata, String domeniu) {
+		super(id, denumire, pret, locatie, data, durata);
 		this.domeniu = domeniu;
 	}
 

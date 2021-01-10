@@ -7,8 +7,8 @@ public abstract class Workshop extends Eveniment{
 		super();
 	}
 	
-	public Workshop(String denumire, float pret, String locatie, String data, int durata,String publicTinta) {
-		super(denumire, pret, locatie, data, durata);
+	public Workshop(Long id, String denumire, float pret, String locatie, String data, int durata, String publicTinta) {
+		super(id, denumire, pret, locatie, data, durata);
 		this.publicTinta = publicTinta;
 	}
 	

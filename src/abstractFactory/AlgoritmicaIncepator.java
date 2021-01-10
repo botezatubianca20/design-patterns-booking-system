@@ -5,8 +5,8 @@ public class AlgoritmicaIncepator extends Algoritmica{
 		super();
 	}
 
-	public AlgoritmicaIncepator(String denumire, float pret, String locatie, String data, int durata, String limbajProgramare) {
-		super(denumire, pret, locatie, data, durata, limbajProgramare);
+	public AlgoritmicaIncepator(Long id, String denumire, float pret, String locatie, String data, int durata, String limbajProgramare) {
+		super(id, denumire, pret, locatie, data, durata, limbajProgramare);
 	}
 
 	
@@ -17,7 +17,7 @@ public class AlgoritmicaIncepator extends Algoritmica{
 
 	@Override
 	public String toString() {
-		return "AlgoritmicaIncepator [limbajProgramare=" + getLimbajProgramare() + ", denumire=" + getDenumire() + ", pretTichet="
+		return "AlgoritmicaIncepator [numarEveniment=" + id + ", limbajProgramare=" + getLimbajProgramare() + ", denumire=" + getDenumire() + ", pretTichet="
 				+ getPretTichet() + ", locatie=" + getLocatie() + ", data=" + getData() + ", durata=" + getDurata() + "]";
 	}
 	

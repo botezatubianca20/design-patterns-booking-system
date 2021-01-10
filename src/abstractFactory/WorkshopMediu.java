@@ -6,8 +6,8 @@ public class WorkshopMediu extends Workshop{
 		super();
 	}
 
-	public WorkshopMediu(String denumire, float pret, String locatie, String data, int durata, String publicTinta) {
-		super(denumire, pret, locatie, data, durata, publicTinta);
+	public WorkshopMediu(Long id, String denumire, float pret, String locatie, String data, int durata, String publicTinta) {
+		super(id, denumire, pret, locatie, data, durata, publicTinta);
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class WorkshopMediu extends Workshop{
 
 	@Override
 	public String toString() {
-		return "WorkshopMediu [publicTinta=" + getPublicTinta() + ", denumire=" + getDenumire() + ", pretTichet="
+		return "WorkshopMediu [numarEveniment=" + id + ", publicTinta=" + getPublicTinta() + ", denumire=" + getDenumire() + ", pretTichet="
 				+ getPretTichet() + ", locatie=" + getLocatie() + ", data=" + getData() + ", durata=" + getDurata() + "]";
 	}
 

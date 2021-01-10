@@ -7,8 +7,8 @@ public abstract class Algoritmica extends Eveniment{
 		super();
 	}
 
-	public Algoritmica(String denumire, float pret, String locatie, String data, int durata, String limbajProgramare) {
-		super(denumire, pret, locatie, data, durata);
+	public Algoritmica(Long id, String denumire, float pret, String locatie, String data, int durata, String limbajProgramare) {
+		super(id, denumire, pret, locatie, data, durata);
 		this.limbajProgramare = limbajProgramare;
 	}
 

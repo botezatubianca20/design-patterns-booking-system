@@ -6,8 +6,8 @@ public class HackathonDezvoltare extends Hackathon{
 		super();
 	}
 	
-	public HackathonDezvoltare(String denumire, float pret, String locatie, String data, int durata, String domeniu) {
-		super(denumire, pret, locatie, data, durata, domeniu);
+	public HackathonDezvoltare(Long id, String denumire, float pret, String locatie, String data, int durata, String domeniu) {
+		super(id, denumire, pret, locatie, data, durata, domeniu);
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class HackathonDezvoltare extends Hackathon{
 
 	@Override
 	public String toString() {
-		return "HackathonDezvoltare [domeniu=" + getDomeniu() + ", denumire=" + getDenumire() + ", pretTichet="
+		return "HackathonDezvoltare [numarEveniment=" + id + ", domeniu=" + getDomeniu() + ", denumire=" + getDenumire() + ", pretTichet="
 				+ getPretTichet() + ", locatie=" + getLocatie() + ", data=" + getData() + ", durata=" + getDurata() + "]";
 	}
 
