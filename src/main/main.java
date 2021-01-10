@@ -11,6 +11,18 @@ import singleton.DatabaseConnection;
 public class main {
 
 	public static void main(String[] args) {
+		//TO DO
+		//pas 1: creare cont nou sau log in
+		//pas 2: selectare tip eveniment (1. HACKATHON    2.ALGORITMICA     3. WORKSHOP     4. Iesire)
+		//pas 3: afisare lista evenimente din categoria selectata
+		//pas 4: selectare eveniment dorit
+		//pas 5: realizare rezervare
+		//pas 6: afisare rezervare + confirmare
+		//pas 7: pas 2
+		 
+		
+		//TO BE DELETED:
+		
 		//singleton
 		DatabaseConnection db1 = null;
 		DatabaseConnection db2 = null;
