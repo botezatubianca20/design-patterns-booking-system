@@ -2,6 +2,7 @@ package main;
 
 import abstractFactory.Eveniment;
 import abstractFactory.Hackathon;
+import abstractFactory.HackathonAnalizaDeDate;
 import builder.Utilizator;
 import iterator.Iterator;
 import iterator.ListaEvenimente;
@@ -46,9 +47,9 @@ public class main {
 		 
 		 //iterator
 		 Eveniment[] evenimente = new Eveniment[3];
-		 evenimente[0] = new Hackathon("hackathon 1", 40, "Bucuresti", "20.03.2021", 24);
-		 evenimente[1] = new Hackathon("hackathon 2", 70, "Bucuresti", "21.03.2021", 48);
-		 evenimente[2] = new Hackathon("hackathon 3", 50, "Bucuresti", "26.03.2021", 24);
+		 evenimente[0] = new HackathonAnalizaDeDate("hackathon 1", 40, "Bucuresti", "20.03.2021", 24, "santate");
+		 evenimente[1] = new HackathonAnalizaDeDate("hackathon 2", 70, "Bucuresti", "21.03.2021", 48, "sanatate");
+		 evenimente[2] = new HackathonAnalizaDeDate("hackathon 3", 50, "Bucuresti", "26.03.2021", 24, "mediu");
 		 ListaEvenimente listaEvenimente = new ListaEvenimente(evenimente);
 		 
 		 Iterator iterator = listaEvenimente.createIterator(); 

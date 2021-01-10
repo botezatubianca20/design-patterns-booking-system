@@ -1,10 +1,24 @@
 package abstractFactory;
 
-public class Hackathon extends Eveniment{
+public abstract class Hackathon extends Eveniment{
+	public String domeniu;
 
-	public Hackathon(String denumire, float pret, String locatie, String data, int durata) {
-		// TODO Auto-generated constructor stub
-		super(denumire, pret, locatie, data, durata);
+	public Hackathon() {
+		super();
 	}
 
+	public Hackathon(String denumire, float pret, String locatie, String data, int durata, String domeniu) {
+		super(denumire, pret, locatie, data, durata);
+		this.domeniu = domeniu;
+	}
+
+	public String getDomeniu() {
+		return domeniu;
+	}
+
+	public void setDomeniu(String domeniu) {
+		this.domeniu = domeniu;
+	}
+
+	public abstract void createEvenimentHackathon(Object o);
 }

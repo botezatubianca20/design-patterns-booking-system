@@ -1,5 +1,5 @@
 package abstractFactory;
 
 public abstract class AbstractFactory {
-	public abstract Eveniment getEvent(TipEveniment name);
+	public abstract Eveniment getEveniment(TipEveniment denumire);
 }
