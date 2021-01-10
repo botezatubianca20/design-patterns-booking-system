@@ -151,8 +151,8 @@ public class main {
         System.out.println("1 - HACKATHON");
         System.out.println("2 - ALGORITMICA");
         System.out.println("3 - WORKSHOP");
-        System.out.println("5 - CREEAZA O REZERVARE LA UN EVENIMENT");
-        System.out.println("4 - Iesire");
+        System.out.println("4 - CREEAZA O REZERVARE LA UN EVENIMENT");
+        System.out.println("5 - Iesire");
 
         EvenimentService service = new EvenimentService();
 
@@ -166,9 +166,7 @@ public class main {
                 while (iterator.hasNext()) {
                     System.out.println(iterator.next().toString());
                 }
-                if (connection != null) {
-                    closeConnection();
-                }
+                meniuEvenimente();
                 break;
             }
             case 2: {
@@ -177,9 +175,7 @@ public class main {
                 while (iterator.hasNext()) {
                     System.out.println(iterator.next().toString());
                 }
-                if (connection != null) {
-                    closeConnection();
-                }
+                meniuEvenimente();
                 break;
             }
             case 3: {
@@ -188,18 +184,10 @@ public class main {
                 while (iterator.hasNext()) {
                     System.out.println(iterator.next().toString());
                 }
-                if (connection != null) {
-                    closeConnection();
-                }
+                meniuEvenimente();
                 break;
             }
             case 4: {
-                if (connection != null) {
-                    closeConnection();
-                }
-                return new Rezultat(2);
-            }
-            case 5: {
                 List<Eveniment> listaEvenimente = new ArrayList<>();
                 listaEvenimente.addAll(service.getListOfHackathons(connection));
                 listaEvenimente.addAll(service.getListOfWorkshops(connection));
@@ -220,13 +208,20 @@ public class main {
 
                 Long reservationId = rezervareService
                         .createReservation(connection, numberOfTickets, (long) value, authenticatedUserId);
-                if(reservationId != 0) {
+                if (reservationId != 0) {
                     System.out.println("REZERVAREA CU ID-UL " + reservationId + " A FOST INREGISTRATA CU SUCCES!");
                 } else {
                     System.out.println("REZERVAREA NU A PUTUT FI INREGISTRATA!");
                 }
-                closeConnection();
+                meniuEvenimente();
                 break;
+            }
+            case 5: {
+                if (connection != null) {
+                    closeConnection();
+                }
+                System.out.println("O ZI BUNA!");
+                return new Rezultat(2);
             }
             default: {
                 System.out.println("Alegeti o valoare intre 1 - 4\n");

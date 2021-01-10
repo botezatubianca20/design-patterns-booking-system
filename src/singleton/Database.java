@@ -27,7 +27,7 @@ public class Database {
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(URL + FILE_NAME);
-            connection.setAutoCommit(true);
+            connection.setAutoCommit(false);
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }

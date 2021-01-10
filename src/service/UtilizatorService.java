@@ -11,11 +11,11 @@ public class UtilizatorService {
 
     public Long insertUser(Utilizator utilizator, Connection connection) {
 
-        String INSERT_NEW_USER = "INSERT INTO Utilizator (nume, prenume, email, parola, sex, tara) values (" + utilizator.dbInsertObject() + ")";
+        String INSERT_NEW_USER = "INSERT INTO Utilizator (id, nume, prenume, email, parola, sex, tara) values (27, " + utilizator.dbInsertObject() + ")";
         try {
             Statement stmt = connection.createStatement();
             stmt.execute(INSERT_NEW_USER);
-
+            connection.commit();
             return stmt.getGeneratedKeys().getLong(1);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
