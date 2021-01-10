@@ -111,9 +111,49 @@ public class main {
 		System.out.println("3 - WORKSHOP");
 		System.out.println("4 - Iesire");
 		
+		Scanner s = new Scanner(System.in);
+		int value = s.nextInt();
+		
+		switch(value) {
+		case 1: {
+			System.out.println("1 - LISTA EVENIMENTE HACKATHON:");
+			listaEvenimenteHackathon();
+			break;
+		}
+		case 2: {
+			System.out.println("2 - LISTA EVENIMENTE ALGORITMICA:");
+			listEvenimenteAlgoritmica();
+			break;
+		}
+		case 3: {
+			System.out.println("3 - LISTA EVENIMENTE WORKSHOP:");
+			listaEvenimenteWorkshop();
+			break;
+		}
+		case 4 :{
+			return new Rezultat(2);
+		}
+		default:{
+			System.out.println("Alegeti o valoare intre 1 - 4\n");
+			meniuAutentificare();
+			break;
+		}
+		}
+		
 		return new Rezultat(2);
 	}
 	
+	public static void listaEvenimenteHackathon(){
+	
+	}
+	
+	public static void listEvenimenteAlgoritmica(){
+		
+	}
+	
+	public static void listaEvenimenteWorkshop(){
+		
+	}
 	
 	public static void main(String[] args) {
 		//TO DO
