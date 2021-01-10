@@ -8,7 +8,6 @@ public class Utilizator {
 	private String parola;
 
 	//campuri optionale de completat la autentificare
-	private int varsta;
 	private String tara;
 	private String sex;
 	
@@ -17,7 +16,6 @@ public class Utilizator {
 		this.nume = builder.nume;
 		this.email = builder.email;
 		this.parola = builder.parola;
-		this.varsta = builder.varsta;
 		this.tara = builder.tara;
 		this.sex = builder.sex;
 	}
@@ -26,7 +24,7 @@ public class Utilizator {
 	@Override
 	public String toString() {
 		return "Utilizator [prenume=" + prenume + ", nume=" + nume + ", email=" + email + ", parola=" + parola
-				+ ", varsta=" + varsta + ", tara=" + tara + ", sex=" + sex + "]";
+				+ ", tara=" + tara + ", sex=" + sex + "]";
 	}
 
 
@@ -36,7 +34,6 @@ public class Utilizator {
 		private String email;
 		private String parola;
 		
-		private int varsta;
 		private String tara;
 		private String sex;
 		
@@ -49,15 +46,11 @@ public class Utilizator {
 			this.parola = parola;
 		}
 		
-		public BuilderUtilizator setAge(int varsta) {
-			this.varsta = varsta;
-			return this;
-		}
-		public BuilderUtilizator setCountry(String tara) {
+		public BuilderUtilizator setTara(String tara) {
 			this.tara = tara;
 			return this;
 		}
-		public BuilderUtilizator setGender(String sex) {
+		public BuilderUtilizator setSex(String sex) {
 			this.sex = sex;
 			return this;
 		}
